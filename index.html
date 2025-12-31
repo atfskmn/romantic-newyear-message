@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0"
+  >
+  <meta
+    name="mobile-web-app-capable"
+    content="yes"
+  >
+  <meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+  >
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  >
+  <title>Canım 💕 Yeni Yıl Mesajım</title>
+  <!-- Favicon ekle -->
+  <link
+    rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💕</text></svg>"
+  >
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #533483 100%);
+      background-size: 400% 400%;
+      animation: gradientFlow 10s ease infinite;
+      color: white;
+      overflow-x: hidden;
+      cursor: pointer;
+      position: relative;
+    }
+
+    @keyframes gradientFlow {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Dinamik parçacık arkaplan */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 215, 0, 0.6);
+      border-radius: 50%;
+      animation: particleFloat 15s linear infinite;
+    }
+
+    @keyframes particleFloat {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+
+      10% {
+        opacity: 1;
+      }
+
+      90% {
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Arkaplan kalp atışı efekti */
+    .heartbeat-bg {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12rem;
+      color: rgba(255, 105, 180, 0.1);
+      z-index: 1;
+      animation: heartbeatPulse 1.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    @keyframes heartbeatPulse {
+
+      0%,
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        text-shadow: 0 0 0 rgba(255, 105, 180, 0);
+      }
+
+      25% {
+        transform: translate(-50%, -50%) scale(1.05);
+        text-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.15);
+        text-shadow: 0 0 40px rgba(255, 105, 180, 0.5);
+      }
+
+      75% {
+        transform: translate(-50%, -50%) scale(1.05);
+        text-shadow: 0 0 20px rgba(255, 105, 180, 0.3);
+      }
+    }
+
+    /* Kırmızı dalgalar */
+    .heart-wave {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      border: 2px solid rgba(220, 20, 60, 0.6);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 1;
+      animation: waveExpand 2s ease-out infinite;
+    }
+
+    @keyframes waveExpand {
+      0% {
+        width: 100px;
+        height: 100px;
+        opacity: 1;
+      }
+
+      100% {
+        width: 800px;
+        height: 800px;
+        opacity: 0;
+        border-width: 0;
+      }
+    }
+
+    /* Konfeti animasyonu */
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      pointer-events: none;
+      z-index: 200;
+    }
+
+    .confetti-piece {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+      animation: confettiFall 3s ease-out forwards;
+    }
+
+    @keyframes confettiFall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    /* Kalp patlaması efektleri */
+    .heart-explosion {
+      position: fixed;
+      pointer-events: none;
+      z-index: 150;
+      font-size: 2rem;
+    }
+
+    /* Kalp çizgi outline */
+    .heart-outline {
+      position: fixed;
+      top: 32%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 280px;
+      z-index: 99;
+      pointer-events: none;
+    }
+
+    .heart-svg {
+      width: 100%;
+      height: 100%;
+      animation: heartOutlinePulse 2s ease-in-out infinite;
+    }
+
+    .heart-path {
+      fill: none;
+      stroke: rgba(255, 20, 147, 0.9);
+      stroke-width: 3;
+      filter: drop-shadow(0 0 10px rgba(255, 20, 147, 0.8));
+    }
+
+    @keyframes heartOutlinePulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    .floating-heart {
+      position: absolute;
+      animation: heartExplosion 4s ease-out forwards;
+      color: #ff69b4;
+      text-shadow: 0 0 10px rgba(255, 105, 180, 0.8);
+    }
+
+    @keyframes heartExplosion {
+      0% {
+        transform: scale(0) rotate(0deg);
+        opacity: 1;
+      }
+
+      20% {
+        transform: scale(1.2) rotate(180deg);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(0.5) rotate(720deg) translateY(-200px);
+        opacity: 0;
+      }
+    }
+
+    /* Aşk mesajları */
+    .love-message {
+      position: fixed;
+      color: #ff1493;
+      font-weight: bold;
+      font-size: 1.5rem;
+      pointer-events: none;
+      z-index: 180;
+      animation: messageFade 3s ease-out forwards;
+      text-shadow: 0 0 20px rgba(255, 20, 147, 0.8);
+    }
+
+    @keyframes messageFade {
+      0% {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(0.8) translateY(-100px);
+      }
+    }
+
+    /* Büyük kalp patlaması */
+    .mega-heart {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 15rem;
+      color: rgba(255, 105, 180, 0.3);
+      pointer-events: none;
+      z-index: 160;
+      animation: megaHeartPulse 2s ease-in-out;
+    }
+
+    @keyframes megaHeartPulse {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+      }
+
+      50% {
+        transform: translate(-50%, -50%) scale(1.5);
+        opacity: 0.8;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+      }
+    }
+
+    /* Kalp formasyonu pulse efekti */
+    @keyframes heartFormationPulse {
+
+      0%,
+      100% {
+        transform: scale(1.2);
+        filter: brightness(1);
+      }
+
+      50% {
+        transform: scale(1.5);
+        filter: brightness(1.5);
+      }
+    }
+
+    /* Yıldızlı gece arkaplanı */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .star {
+      position: absolute;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite;
+    }
+
+    @keyframes twinkle {
+
+      0%,
+      100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    /* Ana container */
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Büyük ana yazı */
+    .main-text {
+      font-size: clamp(3rem, 8vw, 8rem);
+      font-weight: bold;
+      background: linear-gradient(45deg, #ffd700, #ff69b4, #ffd700);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 3s ease-in-out infinite;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+      letter-spacing: 0.1em;
+    }
+
+    @keyframes gradientShift {
+
+      0%,
+      100% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    /* Şiir kutusu */
+    .poem-container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(20px);
+      border-radius: 30px;
+      padding: 3rem;
+      max-width: 800px;
+      margin: 2rem 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 215, 0, 0.3);
+      transform: scale(0.9);
+      opacity: 0;
+      transition: all 0.8s ease;
+    }
+
+    .poem-container.show {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .poem-text {
+      font-size: clamp(1.2rem, 3vw, 2rem);
+      line-height: 1.8;
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from {
+        text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+      }
+
+      to {
+        text-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 30px rgba(255, 215, 0, 0.5);
+      }
+    }
+
+    /* Fotoğraf galerisi */
+    .photo-gallery {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 5;
+      /* Yazının arkasında kalsın */
+      pointer-events: none;
+    }
+
+    .photo {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 15px;
+      object-fit: cover;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+      border: 2px solid rgba(255, 215, 0, 0.4);
+      opacity: 0.7;
+      transition: all 0.5s ease;
+      z-index: 6;
+    }
+
+    .photo.show {
+      opacity: 0.7 !important;
+      display: block !important;
+      visibility: visible !important;
+    }
+
+    .photo:hover {
+      transform: scale(1.1) rotate(5deg);
+      opacity: 1;
+      z-index: 100;
+      animation-play-state: paused;
+    }
+
+    /* Fotoğraf hareket animasyonları */
+    @keyframes photoFloat {
+
+      0%,
+      100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+      }
+
+      25% {
+        transform: translateY(-20px) translateX(15px) rotate(3deg) scale(1.05);
+      }
+
+      50% {
+        transform: translateY(-10px) translateX(-10px) rotate(-2deg) scale(0.95);
+      }
+
+      75% {
+        transform: translateY(-15px) translateX(20px) rotate(4deg) scale(1.02);
+      }
+    }
+
+    .photo:nth-child(2n) {
+      animation: photoFloat2 10s ease-in-out infinite;
+    }
+
+    .photo:nth-child(3n) {
+      animation: photoFloat3 12s ease-in-out infinite;
+    }
+
+    @keyframes photoFloat2 {
+
+      0%,
+      100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+      }
+
+      33% {
+        transform: translateY(25px) translateX(-20px) rotate(-5deg) scale(1.08);
+      }
+
+      66% {
+        transform: translateY(-30px) translateX(25px) rotate(6deg) scale(0.92);
+      }
+    }
+
+    @keyframes photoFloat3 {
+
+      0%,
+      100% {
+        transform: translateY(0px) translateX(0px) rotate(0deg) scale(1);
+      }
+
+      40% {
+        transform: translateY(-25px) translateX(30px) rotate(7deg) scale(1.1);
+      }
+
+      80% {
+        transform: translateY(20px) translateX(-25px) rotate(-4deg) scale(0.9);
+      }
+    }
+
+    /* Havai fişek */
+    .firework {
+      position: fixed;
+      pointer-events: none;
+      z-index: 50;
+    }
+
+    .firework-particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: #ffd700;
+    }
+
+    /* Alt mesaj */
+    .bottom-message {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 215, 0, 0.9);
+      color: #000;
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      animation: bounce 2s infinite;
+      box-shadow: 0 5px 15px rgba(255, 215, 0, 0.4);
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateX(-50%) translateY(0);
+      }
+
+      40% {
+        transform: translateX(-50%) translateY(-10px);
+      }
+
+      60% {
+        transform: translateX(-50%) translateY(-5px);
+      }
+    }
+
+    /* Mobil uyumluluk */
+    @media (max-width: 768px) {
+      .poem-container {
+        padding: 1.5rem;
+        margin: 0.5rem;
+        font-size: 1rem;
+      }
+
+      .photo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .bottom-message {
+        font-size: 0.8rem;
+        padding: 10px 15px;
+        bottom: 10px;
+        max-width: 95%;
+      }
+
+      /* Kalp fotoğrafları mobilde küçük */
+      .heart-photo {
+        width: 40px !important;
+        height: 40px !important;
+      }
+
+      /* Mobilde tıklama alanını büyüt */
+      body {
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        touch-action: manipulation;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .poem-container {
+        padding: 1rem;
+        margin: 0.3rem;
+        font-size: 0.9rem;
+      }
+
+      .photo {
+        width: 60px;
+        height: 60px;
+      }
+
+      .heart-photo {
+        width: 30px !important;
+        height: 30px !important;
+      }
+
+      .bottom-message {
+        font-size: 0.7rem;
+        padding: 8px 12px;
+      }
+    }
+
+    /* Kalp animasyonu */
+    .heart {
+      position: fixed;
+      color: #ff69b4;
+      font-size: 2rem;
+
+      /* Şarkı sözleri */
+      .lyrics {
+        position: fixed;
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #ffd700;
+        text-shadow: 0 0 15px rgba(255, 215, 0, 1);
+        z-index: 300;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 15px 30px;
+        border-radius: 20px;
+        backdrop-filter: blur(10px);
+        max-width: 90%;
+        opacity: 0;
+        transition: all 0.5s ease;
+        pointer-events: none;
+        border: 2px solid rgba(255, 215, 0, 0.5);
+      }
+
+      .lyrics.show {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      .lyrics-line {
+        display: block;
+        margin: 5px 0;
+        animation: lyricsGlow 3s ease-in-out infinite;
+      }
+
+      @keyframes lyricsGlow {
+
+        0%,
+        100% {
+          text-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        50% {
+          text-shadow: 0 0 20px rgba(255, 105, 180, 1), 0 0 30px rgba(255, 215, 0, 0.9);
+        }
+      }
+
+      /* Müzik kontrolleri */
+      .music-control {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 20, 147, 0.8);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 300;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 20px rgba(255, 20, 147, 0.6);
+        transition: all 0.3s ease;
+      }
+
+      .music-control:hover {
+        transform: scale(1.1);
+        background: rgba(255, 105, 180, 0.9);
+      }
+
+      pointer-events: none;
+      z-index: 100;
+      animation: heartFloat 3s ease-out forwards;
+    }
+
+    @keyframes heartFloat {
+      0% {
+        transform: translateY(0) scale(0);
+        opacity: 1;
+      }
+
+      50% {
+        transform: translateY(-50px) scale(1.2);
+        opacity: 1;
+      }
+
+      100% {
+        transform: translateY(-100px) scale(0);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Müzik -->
+  <audio
+    id="backgroundMusic"
+    loop
+    autoplay
+  >
+    <source
+      src="sarki.mp3"
+      type="audio/mpeg"
+    >
+    Tarayıcınız ses dosyalarını desteklemiyor.
+  </audio>
+
+  <div
+    class="stars"
+    id="stars"
+  ></div>
+
+  <!-- Arkaplan kalp atışı -->
+  <div class="heartbeat-bg">💖</div>
+
+  <div
+    class="photo-gallery"
+    id="photoGallery"
+  ></div>
+
+  <div class="container">
+    <div
+      class="main-text"
+      id="mainText"
+    >2026</div>
+
+    <div
+      class="poem-container"
+      id="poemContainer"
+    >
+      <div
+        class="poem-text"
+        id="poemText"
+      >
+        Tıkla ve yeni yıl şiirimi dinle 💖
+      </div>
+    </div>
+  </div>
+
+  <div class="bottom-message">
+    🎆 Ekrana tıkla, şiirlerimi oku! 🎆
+  </div>
+
+  <script>
+    let currentPoem = 0;
+    let clickCount = 0;
+
+    const poems = [
+      {
+        title: "💕",
+        text: `Yeni yıla girerken, kalbimde sen varsın<br>
+                       Her nefeste, her an, ruhunda ben varsın<br>
+                       2026 geldi, seninle daha güzel<br>
+                       Aşkımız büyüyor, her gün daha hoşgel<br><br>
+                       💖 Seni çok seviyorum canım 💖`
+      },
+      {
+        title: "title_text 🌟",
+        text: `Bu yıl seninle nice hayaller kuralım<br>
+                       Birlikte gülelim, birlikte ağlayalım<br>
+                       Elele tutuşup, yolumuza devam<br>
+                       Sen benim yarım, ben senin tamam<br><br>
+                       ✨ İyi ki varsın hayatımda sen ✨`
+      },
+      {
+        title: "🎊",
+        text: `2025 bitti, ama sevgimiz bitmesin<br>
+                       Seninle geçen her an, hiç silinmez<br>
+                       Yeni yılda da yanımda ol gene<br>
+                       Sensiz geçen dakika, sanki yıllar bene<br><br>
+                       🌹 Kalbimin tek sahibi, benim hayatım 🌹`
+      },
+      {
+        title: "Cnm 💫",
+        text: `Yıldızlar parlarken, sen daha parlak<br>
+                       Gözlerinde saklı binlerce masal ak<br>
+                       Bu gece dilek tut, ben de tutacağım<br>
+                       Aynı dileği, seninle yaşayacağım<br><br>
+                       🎇 Dilek: Sonsuza dek seninle olmak cnm 🎇`
+      },
+      {
+        title: "Prensesim 👑",
+        text: `Gece yarısı çaldığında saatler<br>
+                       Seninle kutlayacağım bu anlar<br>
+                       Öpücüklerinle karşılayayım yeni yılı<br>
+                       Sen olmasan bu gecenin ne sılı?<br><br>
+                       🥂 Şerefe! Bizim sevgimize prensesim 🥂`
+      },
+      {
+        title: " Tüm Kalbimle 💕",
+        text: `
+                       
+                      
+                       Yanında olmasam da sen hep benim kalbimdesin<br><br>
+                       🎊 MUTLU YILLAR SANA! 🎊<br>
+                       💖 Sonsuza dek seninle... 💖`
+      }
+    ];
+
+    // Sadece mevcut fotoğraflar
+    const photos = [
+      '1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg', '7.jpeg',
+      '8.jpeg', '10.jpeg', '11.jpeg', '13.jpeg', '14.jpeg'
+    ];
+
+    let currentPhotoSet = [];
+    let photoChangeInterval;
+
+    // Yıldızları ve parçacıkları oluştur
+    function createStars() {
+      const starsContainer = document.getElementById('stars');
+      for (let i = 0; i < 80; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        star.style.left = Math.random() * 100 + '%';
+        star.style.top = Math.random() * 100 + '%';
+        star.style.width = Math.random() * 4 + 1 + 'px';
+        star.style.height = star.style.width;
+        star.style.animationDelay = Math.random() * 3 + 's';
+        starsContainer.appendChild(star);
+      }
+
+      // Parçacık sistemi ekle
+      createParticles();
+
+      // Kalp dalgalarını başlat
+      createHeartWaves();
+    }
+
+    // Kalp dalga sistemi
+    function createHeartWaves() {
+      setInterval(() => {
+        const wave = document.createElement('div');
+        wave.className = 'heart-wave';
+        document.body.appendChild(wave);
+
+        setTimeout(() => {
+          if (wave.parentNode) {
+            wave.remove();
+          }
+        }, 2000);
+      }, 1200); // Her kalp atışında
+    }
+
+    // Dinamik parçacık sistemi
+    function createParticles() {
+      const particlesContainer = document.createElement('div');
+      particlesContainer.className = 'particles';
+      document.body.appendChild(particlesContainer);
+
+      setInterval(() => {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.width = Math.random() * 8 + 2 + 'px';
+        particle.style.height = particle.style.width;
+        particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+
+        // Rastgele renkler
+        const colors = ['rgba(255,215,0,0.6)', 'rgba(255,105,180,0.6)', 'rgba(135,206,250,0.6)'];
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+        particlesContainer.appendChild(particle);
+
+        // Parçacığı 20 saniye sonra temizle
+        setTimeout(() => {
+          if (particle.parentNode) {
+            particle.remove();
+          }
+        }, 20000);
+      }, 800);
+    }
+
+    // Rastgele pozisyon oluştur
+    function getRandomPosition() {
+      return {
+        left: Math.random() * (window.innerWidth - 150) + 'px',
+        top: Math.random() * (window.innerHeight - 150) + 'px'
+      };
+    }
+
+    // Fotoğrafları ilk kez oluştur
+    function createPhotos() {
+      const gallery = document.getElementById('photoGallery');
+
+      // Köşelerde sabit pozisyonlar - yazıyı engellemeyecek
+      const positions = [
+        { left: '5%', top: '10%' },
+        { left: '88%', top: '10%' },
+        { left: '5%', top: '80%' },
+        { left: '88%', top: '80%' }
+      ];
+
+      // İlk set: 4 rastgele fotoğraf göster
+      const shuffledPhotos = [...photos].sort(() => Math.random() - 0.5);
+      currentPhotoSet = shuffledPhotos.slice(0, 4);
+
+      currentPhotoSet.forEach((photo, index) => {
+        const img = document.createElement('img');
+        img.src = photo;
+        img.className = 'photo';
+        img.id = `photo-${index}`;
+        img.style.left = positions[index].left;
+        img.style.top = positions[index].top;
+        img.style.position = 'absolute';
+        img.style.zIndex = '25';
+        img.style.border = '5px solid red'; // Test için kırmızı border
+        img.style.backgroundColor = 'blue'; // Test için mavi arka plan
+        img.style.animationDelay = (index * 0.2) + 's';
+
+        // Hata kontrolü ekle
+        img.onerror = function () {
+          // Hata durumunda renkli kutu göster
+          img.style.width = '150px';
+          img.style.height = '150px';
+          img.style.backgroundColor = ['red', 'green', 'blue', 'yellow'][index];
+          img.style.display = 'block';
+          img.alt = 'Photo error';
+        };
+
+        img.onload = function () {
+          // Photo loaded successfully (no console log)
+        };
+
+        gallery.appendChild(img);
+
+        setTimeout(() => {
+          img.classList.add('show');
+        }, index * 200);
+      });
+
+      // Fotoğraf değiştirme döngüsünü başlat
+      startPhotoRotation();
+    }
+
+    // Fotoğraf döngüsünü başlat
+    function startPhotoRotation() {
+      photoChangeInterval = setInterval(() => {
+        changePhotos();
+      }, 3000); // Her 3 saniyede bir değiştir (daha sakin)
+    }
+
+    // Fotoğrafları değiştir
+    function changePhotos() {
+      const gallery = document.getElementById('photoGallery');
+      const currentImages = gallery.querySelectorAll('.photo');
+
+      // Yeni fotoğraf setini seç
+      const shuffledPhotos = [...photos].sort(() => Math.random() - 0.5);
+      const newPhotoSet = shuffledPhotos.slice(0, 4);
+
+      // Mevcut fotoğrafları hızla değiştir
+      currentImages.forEach((img, index) => {
+        if (newPhotoSet[index]) {
+          // Önce fade out
+          img.style.transition = 'opacity 0.1s ease';
+          img.style.opacity = '0';
+
+          setTimeout(() => {
+            img.src = newPhotoSet[index];
+            img.style.opacity = '0.9';
+
+            // Hata durumunda tekrar dene
+            img.onerror = function () {
+              // Farklı bir fotoğraf dene
+              const backupPhotos = photos.filter(p => p !== newPhotoSet[index]);
+              if (backupPhotos.length > 0) {
+                img.src = backupPhotos[Math.floor(Math.random() * backupPhotos.length)];
+              }
+            };
+          }, 100);
+        }
+      });
+
+      currentPhotoSet = newPhotoSet;
+    }
+
+    // Son şiir için fotoğrafları yazı kutucuğunun yanlarında kalp yap
+    function createHeartFormation() {
+      const gallery = document.getElementById('photoGallery');
+
+      // Önce mevcut fotoğrafları kaldır
+      gallery.innerHTML = '';
+
+      // Sol kalp pozisyonları (yazı kutucuğunun hemen solunda)
+      const leftHeartPositions = [
+        // Kalp üst sol yuvarlak kısım
+        { left: '18%', top: '28%' },
+        { left: '22%', top: '25%' },
+        { left: '26%', top: '24%' },
+        { left: '30%', top: '25%' },
+        // Kalp üst sağ yuvarlak kısım
+        { left: '32%', top: '28%' },
+        { left: '34%', top: '32%' },
+        // Kalp orta birleşim
+        { left: '20%', top: '32%' },
+        { left: '24%', top: '30%' },
+        { left: '28%', top: '30%' },
+        { left: '30%', top: '32%' },
+        // Kalp alt sivri kısım
+        { left: '22%', top: '36%' },
+        { left: '26%', top: '35%' },
+        { left: '30%', top: '36%' },
+        { left: '24%', top: '40%' },
+        { left: '28%', top: '40%' },
+        { left: '26%', top: '44%' }
+      ];
+
+      // Sağ kalp pozisyonları (yazı kutucuğunun hemen sağında)
+      const rightHeartPositions = [
+        // Kalp üst sol yuvarlak kısım
+        { left: '66%', top: '28%' },
+        { left: '70%', top: '25%' },
+        { left: '74%', top: '24%' },
+        { left: '78%', top: '25%' },
+        // Kalp üst sağ yuvarlak kısım
+        { left: '80%', top: '28%' },
+        { left: '82%', top: '32%' },
+        // Kalp orta birleşim
+        { left: '68%', top: '32%' },
+        { left: '72%', top: '30%' },
+        { left: '76%', top: '30%' },
+        { left: '78%', top: '32%' },
+        // Kalp alt sivri kısım
+        { left: '70%', top: '36%' },
+        { left: '74%', top: '35%' },
+        { left: '78%', top: '36%' },
+        { left: '72%', top: '40%' },
+        { left: '76%', top: '40%' },
+        { left: '74%', top: '44%' }
+      ];
+
+      // Tüm pozisyonları birleştir
+      const allPositions = [...leftHeartPositions, ...rightHeartPositions];
+
+      // Fotoğrafları tekrarlayarak her iki kalbi de doldur
+      allPositions.forEach((position, index) => {
+        const photo = photos[index % photos.length]; // Fotoğrafları döngü halinde kullan
+
+        const img = document.createElement('img');
+        img.src = photo;
+        img.className = 'photo heart-photo';
+        img.id = `heart-photo-${index}`;
+        img.style.position = 'absolute';
+        img.style.width = '70px';
+        img.style.height = '70px';
+        img.style.borderRadius = '12px';
+        img.style.objectFit = 'cover';
+        img.style.border = '3px solid rgba(255, 20, 147, 0.9)';
+        img.style.boxShadow = '0 0 20px rgba(255, 20, 147, 0.8)';
+        img.style.zIndex = '500';
+        img.style.transition = 'all 2s ease';
+        img.style.left = position.left;
+        img.style.top = position.top;
+        img.style.opacity = '0';
+        img.style.transform = 'scale(0)';
+
+        gallery.appendChild(img);
+
+        // Animasyonlu görünüm
+        setTimeout(() => {
+          img.style.opacity = '1';
+          img.style.transform = 'scale(1)';
+          img.style.animation = 'heartFormationPulse 1s ease-in-out infinite';
+        }, index * 100);
+      });
+    }    // Fotoğrafları değiştir (sabit pozisyonlarda)
+    function changePhotos() {
+      const gallery = document.getElementById('photoGallery');
+      const currentImages = gallery.querySelectorAll('.photo');
+
+      // Yeni fotoğraf setini seç
+      const shuffledPhotos = [...photos].sort(() => Math.random() - 0.5);
+      const newPhotoSet = shuffledPhotos.slice(0, 4);
+
+      // Mevcut fotoğrafları hızla değiştir (pozisyon sabit kalsın)
+      currentImages.forEach((img, index) => {
+        if (newPhotoSet[index]) {
+          // Önce fade out
+          img.style.transition = 'opacity 0.3s ease';
+          img.style.opacity = '0.2';
+
+          setTimeout(() => {
+            img.src = newPhotoSet[index];
+            img.style.opacity = '0.7';
+
+            // Hata durumunda tekrar dene
+            img.onerror = function () {
+              // Farklı bir fotoğraf dene
+              const backupPhotos = photos.filter(p => p !== newPhotoSet[index]);
+              if (backupPhotos.length > 0) {
+                img.src = backupPhotos[Math.floor(Math.random() * backupPhotos.length)];
+              }
+            };
+          }, 150);
+        }
+      });
+
+      currentPhotoSet = newPhotoSet;
+    }
+
+    // Havai fişek efekti
+    function createFirework(x, y) {
+      const colors = ['#ffd700', '#ff69b4', '#ff1493', '#00ff7f', '#ff8c00'];
+
+      for (let i = 0; i < 15; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'firework-particle';
+        particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+        particle.style.left = x + 'px';
+        particle.style.top = y + 'px';
+
+        document.body.appendChild(particle);
+
+        const angle = (Math.PI * 2 * i) / 15;
+        const velocity = 100 + Math.random() * 100;
+
+        let posX = x, posY = y;
+        let velX = Math.cos(angle) * velocity;
+        let velY = Math.sin(angle) * velocity;
+
+        function animate() {
+          posX += velX * 0.03;
+          posY += velY * 0.03;
+          velY += 3;
+          velX *= 0.98;
+          velY *= 0.98;
+
+          particle.style.left = posX + 'px';
+          particle.style.top = posY + 'px';
+          particle.style.opacity = parseFloat(particle.style.opacity || 1) - 0.02;
+
+          if (parseFloat(particle.style.opacity) > 0 && posY < window.innerHeight + 50) {
+            requestAnimationFrame(animate);
+          } else {
+            particle.remove();
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+    }
+
+    // Kalp efekti
+    function createHeart(x, y) {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '💕';
+      heart.style.left = x - 15 + 'px';
+      heart.style.top = y - 15 + 'px';
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 3000);
+    }
+
+    // Şiir göster
+    function showPoem(index) {
+      const mainText = document.getElementById('mainText');
+      const poemText = document.getElementById('poemText');
+      const container = document.getElementById('poemContainer');
+
+      // Ana yazıyı güncelle
+      mainText.textContent = poems[index].title;
+
+      // Şiir metnini güncelle
+      container.classList.remove('show');
+
+      setTimeout(() => {
+        poemText.innerHTML = poems[index].text;
+        container.classList.add('show');
+
+        // Son şiir ise ekstra efektler ekle
+        if (index === poems.length - 1) {
+          setTimeout(() => {
+            createHeartExplosion();
+          }, 2000);
+        }
+      }, 300);
+    }
+
+    // Tıklama ve dokunma olayları
+    function handleInteraction(e) {
+      clickCount++;
+
+      // Touch veya click koordinatlarını al
+      const x = e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX) || window.innerWidth / 2;
+      const y = e.clientY || (e.touches && e.touches[0] && e.touches[0].clientY) || window.innerHeight / 2;
+
+      // Efektler
+      createFirework(x, y);
+      createHeart(x, y);
+
+      // Şiir göster
+      if (currentPoem < poems.length) {
+        showPoem(currentPoem);
+        currentPoem++;
+      } else {
+        // Şiirler bitti - final mesajı göster
+        const mainText = document.getElementById('mainText');
+        const poemText = document.getElementById('poemText');
+        const container = document.getElementById('poemContainer');
+        const bottomMessage = document.querySelector('.bottom-message');
+
+        mainText.textContent = "💖 Son💖";
+        container.classList.remove('show');
+
+        setTimeout(() => {
+          poemText.innerHTML = `
+            <div style="font-size: 1.5em; color: #ffd700;">
+              🎊 Tüm şiirlerim bu kadar 🎊<br><br>
+              💕 Umarım beğenmişsindir 💕<br><br>
+              <span style="font-size: 0.8em; color: #ff69b4;">
+                2026 yılında da seninle olmak dileğiyle... 🌟
+              </span>
+            </div>
+          `;
+          container.classList.add('show');
+        }, 300);
+
+        // Alt mesajı değiştir
+        bottomMessage.innerHTML = '✨ Şiirlerim bitti, kalbin hep benimle olsun! ✨';
+        bottomMessage.style.background = 'rgba(255, 105, 180, 0.9)';
+
+        // Konfeti patlaması başlat
+        createConfetti();
+
+        // Kalp patlaması efektlerini başlat
+        setTimeout(() => {
+          createHeartExplosion();
+          createMegaHeart();
+          createLoveMessages();
+          createHeartFormation(); // Fotoğrafları kalp formasyonuna getir
+        }, 1000);
+      }
+    }
+
+    // Event listener'ları ekle (hem click hem touch)
+    document.addEventListener('click', handleInteraction);
+    document.addEventListener('touchstart', function (e) {
+      e.preventDefault(); // Default davranışı engelle
+      handleInteraction(e);
+    });
+
+    // Kalp patlaması efekti
+    function createHeartExplosion() {
+      const heartSymbols = ['💖', '💕', '💝', '💗', '💓', '💘', '❤️', '💜', '🧡', '💛', '🤍', '🖤', '💚', '💙'];
+
+      // Çok daha fazla kalp (100 adet)
+      for (let i = 0; i < 100; i++) {
+        setTimeout(() => {
+          const heart = document.createElement('div');
+          heart.className = 'heart-explosion';
+          heart.style.left = Math.random() * 100 + '%';
+          heart.style.top = Math.random() * 100 + '%';
+
+          const floatingHeart = document.createElement('div');
+          floatingHeart.className = 'floating-heart';
+          floatingHeart.innerHTML = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+          floatingHeart.style.animationDelay = Math.random() + 's';
+          floatingHeart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+
+          // Rastgele boyutlar
+          const size = Math.random() * 1.5 + 0.8;
+          floatingHeart.style.fontSize = size + 'rem';
+
+          heart.appendChild(floatingHeart);
+          document.body.appendChild(heart);
+
+          setTimeout(() => {
+            if (heart.parentNode) {
+              heart.remove();
+            }
+          }, 6000);
+        }, i * 50); // Daha hızlı peş peşe
+      }
+    }
+
+    // Büyük kalp patlaması
+    function createMegaHeart() {
+      const megaHeart = document.createElement('div');
+      megaHeart.className = 'mega-heart';
+      megaHeart.innerHTML = '💖';
+      document.body.appendChild(megaHeart);
+
+      setTimeout(() => {
+        if (megaHeart.parentNode) {
+          megaHeart.remove();
+        }
+      }, 2000);
+    }
+
+    // Aşk mesajları (çok daha fazla)
+    function createLoveMessages() {
+      const messages = [
+        'SENİ ÇOK SEVİYORUM! 💖',
+        'CANIMIN İÇİ! 💕',
+        'HAYATIMIN ANLAMI! 💘',
+        'EN GÜZEL SEN! 🌹',
+        'KALBIM SENDE! ❤️',
+        'SONSUZA DEK! 💝',
+        'GÖZÜMÜN NRu! ✨',
+        'RUHUM SENDE! 💫',
+        'NEFESIM SEN! 🌸',
+        'DÜNYAM SEN! 🌍',
+        'YILDIZIM SEN! ⭐',
+        'GÜNEŞIM SEN! ☀️',
+        'MELEĞIM SEN! 👼',
+        'PRENSESIM! 👑',
+        'AŞKIM! 💗',
+        'SEVGILIM! 💓',
+        'hayatım! 🦋',
+        'TATLIM! 🍯',
+        'GÜZELIM! 🌺',
+        'BENİM HER ŞEYIM! 💖'
+      ];
+
+      messages.forEach((message, index) => {
+        setTimeout(() => {
+          const messageEl = document.createElement('div');
+          messageEl.className = 'love-message';
+          messageEl.innerHTML = message;
+          messageEl.style.left = Math.random() * 70 + 15 + '%';
+          messageEl.style.top = Math.random() * 50 + 25 + '%';
+          messageEl.style.animationDelay = Math.random() * 0.3 + 's';
+
+          // Rastgele renkler
+          const colors = ['#ff1493', '#ff69b4', '#ffd700', '#ff6347', '#9370db', '#00ff7f'];
+          messageEl.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+          // Rastgele boyutlar
+          messageEl.style.fontSize = (Math.random() * 0.8 + 1.2) + 'rem';
+
+          document.body.appendChild(messageEl);
+
+          setTimeout(() => {
+            if (messageEl.parentNode) {
+              messageEl.remove();
+            }
+          }, 4000);
+        }, index * 300); // Daha hızlı peş peşe
+      });
+    }
+
+    // Konfeti patlaması (çok daha fazla)
+    function createConfetti() {
+      const colors = [
+        '#ff69b4', '#ffd700', '#ff1493', '#00ff7f', '#ff8c00', '#9370db',
+        '#ff6347', '#32cd32', '#1e90ff', '#ff1493', '#ffa500', '#dc143c',
+        '#00ced1', '#ff69b4', '#adff2f', '#ff4500', '#da70d6', '#00ff7f'
+      ];
+
+      // 300 konfeti parçası!
+      for (let i = 0; i < 300; i++) {
+        setTimeout(() => {
+          const confetti = document.createElement('div');
+          confetti.className = 'confetti';
+          confetti.style.left = Math.random() * 100 + '%';
+          confetti.style.top = '-10px';
+
+          const piece = document.createElement('div');
+          piece.className = 'confetti-piece';
+          piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+          piece.style.animationDelay = Math.random() * 1 + 's';
+          piece.style.animationDuration = (Math.random() * 2 + 2) + 's';
+
+          // Farklı şekiller için rastgele border-radius
+          piece.style.borderRadius = Math.random() > 0.5 ? '50%' : '2px';
+
+          // Rastgele boyutlar
+          const size = Math.random() * 6 + 4;
+          piece.style.width = size + 'px';
+          piece.style.height = size + 'px';
+
+          confetti.appendChild(piece);
+          document.body.appendChild(confetti);
+
+          setTimeout(() => {
+            if (confetti.parentNode) {
+              confetti.remove();
+            }
+          }, 6000);
+        }, i * 20); // Çok hızlı peş peşe konfeti
+      }
+    }
+
+    // Sayfa yüklenince
+    window.onload = function () {
+      createStars();
+      createPhotos();
+
+      setTimeout(() => {
+        document.getElementById('poemContainer').classList.add('show');
+
+        // Otomatik müzik başlat
+        const music = document.getElementById('backgroundMusic');
+        music.currentTime = 48; // 0:48'den başlat
+        music.play().then(() => {
+          console.log('Müzik otomatik başladı');
+        }).catch(error => {
+          console.log('Otomatik müzik başlatılamadı:', error);
+          // İlk tıklama/dokunmada müzik başlat
+          const startMusic = function () {
+            music.currentTime = 48;
+            music.play();
+          };
+          document.addEventListener('click', startMusic, { once: true });
+          document.addEventListener('touchstart', startMusic, { once: true });
+        });
+      }, 1500);
+    };
+  </script>
+</body>
+
+</html>
